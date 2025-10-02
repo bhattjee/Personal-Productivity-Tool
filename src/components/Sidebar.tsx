@@ -1,61 +1,70 @@
-import { Home, Search, Library, Plus } from "lucide-react";
+import { 
+  LayoutDashboard, 
+  CheckSquare, 
+  Target, 
+  Clock, 
+  BookOpen, 
+  Dumbbell, 
+  Activity, 
+  Moon, 
+  TrendingUp, 
+  Quote 
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
+import { cn } from "@/lib/utils";
+
+const navigationItems = [
+  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "To-Do List", url: "/todos", icon: CheckSquare },
+  { title: "Habit Tracker", url: "/habits", icon: Target },
+  { title: "Morning Alarm", url: "/alarms", icon: Clock },
+  { title: "Daily Journal", url: "/journal", icon: BookOpen },
+  { title: "Gym Stats", url: "/gym", icon: Dumbbell },
+  { title: "Running", url: "/running", icon: Activity },
+  { title: "Bedtime", url: "/bedtime", icon: Moon },
+  { title: "Streaks", url: "/streaks", icon: TrendingUp },
+  { title: "Daily Quotes", url: "/quotes", icon: Quote },
+];
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-black h-full flex flex-col p-6 gap-6">
-      <div className="flex flex-col gap-2">
-        <Button 
-          variant="ghost" 
-          className="justify-start gap-4 text-muted-foreground hover:text-foreground transition-colors h-10 px-3"
-        >
-          <Home className="h-6 w-6" />
-          <span className="font-semibold text-base">Home</span>
-        </Button>
-        <Button 
-          variant="ghost" 
-          className="justify-start gap-4 text-muted-foreground hover:text-foreground transition-colors h-10 px-3"
-        >
-          <Search className="h-6 w-6" />
-          <span className="font-semibold text-base">Search</span>
-        </Button>
+    <aside className="w-64 bg-sidebar h-full flex flex-col p-6 gap-6 border-r border-sidebar-border">
+      <div className="mb-4">
+        <h1 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+          Life Flow
+        </h1>
+        <p className="text-xs text-muted-foreground mt-1">Optimize Your Life</p>
       </div>
 
-      <div className="flex flex-col flex-1 gap-4">
-        <div className="flex items-center justify-between">
-          <Button 
-            variant="ghost" 
-            className="justify-start gap-4 text-muted-foreground hover:text-foreground transition-colors h-10 px-3 flex-1"
+      <nav className="flex flex-col gap-1">
+        {navigationItems.map((item) => (
+          <NavLink
+            key={item.title}
+            to={item.url}
+            className={({ isActive }) =>
+              cn(
+                "flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors",
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-primary font-semibold"
+                  : "text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/50"
+              )
+            }
           >
-            <Library className="h-6 w-6" />
-            <span className="font-semibold text-base">Your Library</span>
-          </Button>
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-foreground h-8 w-8"
-          >
-            <Plus className="h-5 w-5" />
-          </Button>
-        </div>
+            <item.icon className="h-5 w-5" />
+            <span className="text-sm">{item.title}</span>
+          </NavLink>
+        ))}
+      </nav>
 
-        <div className="flex flex-col gap-4 mt-4">
-          <div className="bg-secondary rounded-lg p-4 flex flex-col gap-3">
-            <h3 className="font-bold text-sm">Create your first playlist</h3>
-            <p className="text-xs text-muted-foreground">It's easy, we'll help you</p>
-            <Button className="bg-foreground text-background hover:bg-foreground/90 font-semibold rounded-full h-8 text-xs">
-              Create playlist
-            </Button>
-          </div>
-
-          <div className="bg-secondary rounded-lg p-4 flex flex-col gap-3">
-            <h3 className="font-bold text-sm">Let's find some podcasts to follow</h3>
-            <p className="text-xs text-muted-foreground">We'll keep you updated on new episodes</p>
-            <Button className="bg-foreground text-background hover:bg-foreground/90 font-semibold rounded-full h-8 text-xs">
-              Browse podcasts
-            </Button>
-          </div>
-        </div>
+      <div className="mt-auto bg-gradient-card rounded-lg p-4 flex flex-col gap-3">
+        <h3 className="font-bold text-sm">Track Your Progress</h3>
+        <p className="text-xs text-muted-foreground">
+          Unlock insights and achievements as you build better habits
+        </p>
+        <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-full h-8 text-xs">
+          View Analytics
+        </Button>
       </div>
     </aside>
   );
