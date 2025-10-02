@@ -8,7 +8,9 @@ import {
   Activity, 
   Moon, 
   TrendingUp, 
-  Quote 
+  Quote,
+  Wallet,
+  ListChecks
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
@@ -25,6 +27,8 @@ const navigationItems = [
   { title: "Bedtime", url: "/bedtime", icon: Moon },
   { title: "Streaks", url: "/streaks", icon: TrendingUp },
   { title: "Daily Quotes", url: "/quotes", icon: Quote },
+  { title: "Expense Tracker", url: "/expenses", icon: Wallet },
+  { title: "Lists", url: "/lists", icon: ListChecks },
 ];
 
 const Sidebar = () => {

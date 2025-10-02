@@ -14,6 +14,8 @@ import Running from "./pages/Running";
 import Bedtime from "./pages/Bedtime";
 import Streaks from "./pages/Streaks";
 import Quotes from "./pages/Quotes";
+import Expenses from "./pages/Expenses";
+import Lists from "./pages/Lists";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +38,8 @@ const App = () => (
             <Route path="bedtime" element={<Bedtime />} />
             <Route path="streaks" element={<Streaks />} />
             <Route path="quotes" element={<Quotes />} />
+            <Route path="expenses" element={<Expenses />} />
+            <Route path="lists" element={<Lists />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
