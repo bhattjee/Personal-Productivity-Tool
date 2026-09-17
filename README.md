@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# Life Flow
 
-## Project info
+A comprehensive personal productivity and life optimization application built to help you track habits, manage tasks, monitor fitness, and achieve your goals.
 
-**URL**: https://lovable.dev/projects/06f4c1c0-45ca-4e6d-970b-a294ac372f45
+## Features
 
-## How can I edit this code?
+Life Flow includes the following modules:
 
-There are several ways of editing your application.
+- Dashboard - Overview of your daily progress, streaks, and AI-powered insights
+- To-Do List - Task management with completion tracking
+- Habit Tracker - Build and maintain positive habits with streak tracking
+- Morning Alarm - Set and manage alarms for your morning routine
+- Daily Journal - Reflect on your day with journaling capabilities
+- Gym Stats - Track your workout sessions and progress
+- Running - Monitor running activities and performance
+- Bedtime - Sleep tracking and bedtime routine management
+- Streaks - Visualize and celebrate your consistency streaks
+- Daily Quotes - Get inspired with motivational quotes and favorites
+- Expense Tracker - Manage your finances and expenses
+- Lists - Create and manage custom lists for various purposes
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/06f4c1c0-45ca-4e6d-970b-a294ac372f45) and start prompting.
+React 18 - UI framework
+TypeScript - Type-safe development
+Vite - Fast build tool and dev server
+Tailwind CSS - Utility-first styling
+shadcn/ui - High-quality UI components built on Radix UI
+React Router - Client-side routing
+TanStack Query - Data fetching and state management
+Lucide React - Beautiful icon library
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (18 or higher)
+- npm, yarn, or pnpm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
+cd music-facsimile
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The built files will be in the `dist` directory.
 
-## What technologies are used for this project?
+### Preview Production Build
 
-This project is built with:
+```bash
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Available Scripts
 
-## How can I deploy this project?
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-Simply open [Lovable](https://lovable.dev/projects/06f4c1c0-45ca-4e6d-970b-a294ac372f45) and click on Share -> Publish.
+## Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+```
+src/
+├── components/       # Reusable UI components
+│   ├── ui/          # shadcn/ui components
+│   └── Sidebar.tsx  # Main navigation sidebar
+├── pages/           # Page components for each feature
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+├── assets/          # Static assets
+└── App.tsx          # Main application component with routing
+```
 
-Yes, you can!
+## Security Note
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project does not contain any sensitive data such as:
+- API keys
+- Secret tokens
+- Database credentials
+- Environment variables
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+All data is currently stored in component state (client-side only). If you plan to add backend functionality or external API integrations, ensure you:
+1. Use environment variables for sensitive configuration
+2. Add `.env` files to `.gitignore`
+3. Never commit secrets to version control
+
+## Development
+
+### Adding New Pages
+
+1. Create a new component in `src/pages/`
+2. Add the route in `src/App.tsx`
+3. Add navigation item in `src/components/Sidebar.tsx`
+
+### Customizing Theme
+
+The application uses Tailwind CSS with custom theme defined in `tailwind.config.ts`. You can customize colors, fonts, and other design tokens there.
+
+## License
+
+This project is private.
