@@ -1,4 +1,4 @@
-# Life Flow
+# Life Flow - Personal-Productivity-Tool
 
 A comprehensive personal productivity and life optimization application built to help you track habits, manage tasks, monitor fitness, and achieve your goals.
 
@@ -116,4 +116,4 @@ The application uses Tailwind CSS with custom theme defined in `tailwind.config.
 
 ## License
 
-This project is private.
+MIT General Use
